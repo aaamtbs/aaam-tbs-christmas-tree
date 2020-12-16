@@ -15,6 +15,47 @@ enum LEDMode {
         Ring = 3
 }
 
+enum Level {
+        //% block="Level 1"
+        Level_1 = 0,
+        //% block="Level 2"
+        Level_2 = 1,
+        //% block="Level 3"
+        Level_3 = 1,
+        //% block="Level 4"
+        Level_4 = 1,
+        //% block="Level 1"
+        Level_5 = 5,
+        //% block="Level 6"
+        Level_6 = 6,
+        //% block="Level 7"
+        Level_7 = 7,
+        //% block="Level 6"
+        Level_8 = 8,
+        //% block="Level 9"
+        Level_9 = 9,
+        //% block="Level 10"
+        Level_10 = 10,
+        //% block="Level 11"
+        Level_11 = 11,
+        //% block="Level 12"
+        Level_12 = 12,
+        //% block="Level 13"
+        Level_13 = 13,
+        //% block="Level 14"
+        Level_14 = 14,
+        //% block="Level 15"
+        Level_15 = 15,
+        //% block="Level 16"
+        Level_16 = 16,
+        //% block="Level 17"
+        Level_17 = 17,
+        //% block="Level 18"
+        Level_18 = 18,
+        //% block="Level 19"
+        Level_19 = 19
+}
+
 /**
 * Christmas Tree blocks
 */
@@ -200,7 +241,7 @@ namespace ChristmasTree {
          * Set specfic level to different color 
          * (0 = level-1, 1 = level-2, etc...)
          */
-        //% blockId="christmastree_setLevelColor" block="%tree set level-%level led to %color=neopixel_colors"
+        //% blockId="christmastree_setLevelColor" block="%tree set level-%level led to %color=christmastree_level"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
@@ -322,4 +363,13 @@ namespace ChristmasTree {
     }
 
 
+    /**
+     * Gets the level value of a known levels
+    */
+    //% weight=2 blockGap=8
+    //% blockId="christmastree_level" block="%level"
+    //% advanced=true
+    export function level(_level: Level): number {
+        return _level;
+    }
 }
