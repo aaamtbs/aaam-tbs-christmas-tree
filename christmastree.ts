@@ -259,6 +259,7 @@ namespace ChristmasTree {
      * Update christmas tree light animation
      */
     //% blockId="christmastree_update" block="%tree update light animation"
+    //% tree.defl=tree
     //% weight=90 blockGap=8
     //% parts="christmastree"
     export function update(tree:ChristmasTree):void{
@@ -328,7 +329,7 @@ namespace ChristmasTree {
     /**
      * Set specfic level to different color (0 = level-1, 1 = level-2, etc...)
      */
-    //% blockId="christmastree_setLevelColor" block="%tree set level-%level" led to %color=TreeColors
+    //% blockId="christmastree_setLevelColor" block="%tree set level-%level led to %color=TreeColors"
     //% weight=90 blockGap=8
     //% parts="christmastree"
     export function setLevelColor(tree:ChristmasTree, level:number, color:number):void{
