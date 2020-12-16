@@ -186,7 +186,7 @@ namespace ChristmasTree {
                 let mic = 128
                 try{
                     mic = input.soundLevel()
-                }catch{
+                }catch(err){
                     mic = 128
                 }
                 this.equalizerAnimation(mic);
@@ -199,7 +199,7 @@ namespace ChristmasTree {
                 let mic = 128
                 try{
                     mic = input.soundLevel()
-                }catch{
+                }catch(err){
                     mic = 128
                 }
                 this.riseAnimation(mic, 100)
