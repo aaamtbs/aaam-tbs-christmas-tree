@@ -12,7 +12,9 @@ enum LEDMode {
         //% block="Breath Mode"
         Breath = 2,
         //% block="Ring Mode"
-        Ring = 3
+        Ring = 3,
+        //% block="Free Mode"
+        Free = 4
 }
 
 enum Level {
@@ -99,6 +101,31 @@ namespace ChristmasTree {
             this._ringState = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
             this._ringColor = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         }
+
+
+
+        /**
+         * Clear strip led color
+         */
+        //% blockId="christmastree_clearStrip" block="%tree clear led color"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        public clearStrip():void{
+            this.strip.clear();
+        }
+
+        /**
+         * Show strip led color
+         */
+        //% blockId="christmastree_showStrip" block="%tree show led color"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        public showStrip():void{
+            this.strip.show();
+        }
+
         /**
          * Shows a rainbow pattern on all LEDs.
          * @param startHue the start hue value for the rainbow, eg: 1
