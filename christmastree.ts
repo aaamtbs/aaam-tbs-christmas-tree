@@ -43,6 +43,9 @@ enum TreeColors {
 */
 //% weight=100 color=#0fab11 icon="❄"
 namespace ChristmasTree {
+    /**
+     * A ChristmasTree tree
+     */
     export class ChristmasTree {
         mode:LEDMode;
         strip: neopixel.Strip;
@@ -78,7 +81,15 @@ namespace ChristmasTree {
             this._ringState = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
             this._ringColor = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         }
-
+        /**
+         * Shows a rainbow pattern on all LEDs.
+         * @param startHue the start hue value for the rainbow, eg: 1
+         * @param endHue the end hue value for the rainbow, eg: 360
+         */
+        //% blockId="christmastree_changeMode" block="%tree|change mode to %mode"
+        //% tree.defl=tree
+        //% weight=85 blockGap=8
+        //% parts="christmastree"
         public changeMode(m:LEDMode):void{
             this._isSetupRainbow = false;
             this.mode = m;
@@ -259,7 +270,6 @@ namespace ChristmasTree {
      * Update christmas tree light animation
      */
     //% blockId="christmastree_update" block="%tree update light animation"
-    //% tree.defl=tree
     //% weight=90 blockGap=8
     //% parts="christmastree"
     export function update(tree:ChristmasTree):void{
