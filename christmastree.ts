@@ -386,6 +386,6 @@ namespace ChristmasTree {
     //% blockId="christmastree_pickColors" block="Select color $color"
     //% color.shadow="colorWheelHsvPicker"
     export function color(color: number): number {
-        return neopixel.hsl( color, 100, 50);
+        return neopixel.hsl( color/255*360, 100, 50);
     }
 }
