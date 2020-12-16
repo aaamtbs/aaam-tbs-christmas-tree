@@ -97,12 +97,6 @@ namespace ChristmasTree {
             }
         }
 
-        /**
-         * Update christmas tree light animation
-         */
-        //% blockId="christmastree_update" block="Update christmas tree light animation"
-        //% weight=90 blockGap=8
-        //% parts="christmastree"
         public update():void{
             if(this.mode==0){
                 this.rainbowAnimation();
@@ -301,4 +295,18 @@ namespace ChristmasTree {
         tree.updateVars();
         return tree;
     }
+
+    
+    /**
+     * Update christmas tree light animation
+     */
+    //% blockId="christmastree_update" block="Update %tree light animation"
+    //% weight=90 blockGap=8
+    //% parts="christmastree"
+    export function update(tree:ChristmasTree):void{
+        tree.update()
+    }
+
+
+    
 }
