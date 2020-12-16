@@ -113,6 +113,13 @@ namespace ChristmasTree {
             this.mode = m;
         }
 
+        /**
+         * Set next animation mode
+         */
+        //% blockId="christmastree_nextMode" block="%tree play next animation"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public nextMode():void{
             this._isSetupRainbow = false;
             this.mode += 1;
@@ -120,6 +127,14 @@ namespace ChristmasTree {
                 this.mode = 0;
             }
         }
+
+        /**
+         * Update animation
+         */
+        //% blockId="christmastree_previousMode" block="%tree play previous animation"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public previousMode():void{
             this._isSetupRainbow = false;
             this.mode -= 1;
@@ -128,6 +143,13 @@ namespace ChristmasTree {
             }
         }
 
+        /**
+         * Update animation
+         */
+        //% blockId="christmastree_update" block="%tree update animation"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public update():void{
             if(this.mode==0){
                 this.rainbowAnimation();
@@ -150,6 +172,13 @@ namespace ChristmasTree {
             }
         }
 
+        /**
+         * Play rainbow animation
+         */
+        //% blockId="christmastree_rainbowAnimation" block="%tree play rainbow animation"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public rainbowAnimation():void{
             if(this._isSetupRainbow == false || this._isSetupRainbow == null){
                 this._isSetupRainbow = true;
@@ -161,6 +190,14 @@ namespace ChristmasTree {
             basic.pause(100);
         }
 
+
+        /**
+         * Play equalizer animation
+         */
+        //% blockId="christmastree_equalizerAnimation" block="%tree play equalizer animation with %value"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public equalizerAnimation(micVal:number):void{
             if(this._lastMicVal!=-1){
                 if(micVal < this._lastMicVal){
@@ -191,6 +228,13 @@ namespace ChristmasTree {
             basic.pause(1);
         }
 
+        /**
+         * Play breath animation
+         */
+        //% blockId="christmastree_breathAnimation" block="%tree play breath animation"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public breathAnimation () {
             if (this._breathT % 100 == 0) {
                 this._breathDir *= -1;
@@ -210,6 +254,13 @@ namespace ChristmasTree {
             this.strip.show()
         }
 
+        /**
+         * Play ring animation
+         */
+        //% blockId="christmastree_ringAnimation" block="%tree play ring animation with %micVale and %threshold"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public ringAnimation(micVal:Number, threshold:Number):void{
             let _duration = 3
             if (micVal > threshold) {
@@ -241,7 +292,7 @@ namespace ChristmasTree {
          * Set specfic level to different color 
          * (0 = level-1, 1 = level-2, etc...)
          */
-        //% blockId="christmastree_setLevelColor" block="%tree set level-%level led to %color=christmastree_level"
+        //% blockId="christmastree_setLevelColor" block="%tree set level-%level=christmastree_levels led to %color=neopixel_colors"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
@@ -291,85 +342,13 @@ namespace ChristmasTree {
         return tree;
     }
 
-    
-    /**
-     * Update christmas tree light animation
-     */
-    //% blockId="christmastree_update" block="%tree update light animation"
-    //% weight=90 blockGap=8
-    //% parts="christmastree"
-    export function update(tree:ChristmasTree):void{
-        tree.update()
-    }
-
-    /**
-     * Control tree to play next preset animation
-     */
-    //% blockId="christmastree_nextMode" block="%tree play next animation"
-    //% weight=90 blockGap=8
-    //% parts="christmastree"
-    export function nextMode(tree:ChristmasTree):void{
-        tree.nextMode();
-    }
-    /**
-     * Control tree to play previous preset animation
-     */
-    //% blockId="christmastree_previousMode" block="%tree play previous animation"
-    //% weight=90 blockGap=8
-    //% parts="christmastree"
-    export function previousMode(tree:ChristmasTree):void{
-        tree.previousMode();
-    }
-
-    /**
-     * Play Rainbow animation
-     */
-    //% blockId="christmastree_rainbowAnimation" block=" %tree play Rainbow animation"
-    //% weight=90 blockGap=8
-    //% parts="christmastree"
-    export function rainbowAnimation(tree:ChristmasTree):void{
-        tree.rainbowAnimation();
-    }
-
-    /**
-     * Play Equalize animation with Mic level
-     */
-    //% blockId="christmastree_equalizerAnimation" block="%tree play equalize animation with Mic level (%micLevel)"
-    //% weight=90 blockGap=8
-    //% parts="christmastree"
-    export function equalizerAnimation(tree:ChristmasTree, micVal:number):void{
-        tree.equalizerAnimation(micVal);
-    }
-
-
-    /**
-     * Play breath animation
-     */
-    //% blockId="christmastree_breathAnimation" block="%tree play breath animation"
-    //% weight=90 blockGap=8
-    //% parts="christmastree"
-    export function breathAnimation (tree:ChristmasTree):void {
-        tree.breathAnimation();
-    }
-
-    /**
-     * Play ring animation
-     */
-    //% blockId="christmastree_ringAnimation" block="%tree play ring animation with %micVale and %threshold"
-    //% weight=90 blockGap=8
-    //% parts="christmastree"
-    export function ringAnimation(tree:ChristmasTree, micVal:Number, threshold:Number):void{
-        tree.ringAnimation(micVal, threshold);
-    }
-
-
     /**
      * Gets the level value of a known levels
     */
     //% weight=2 blockGap=8
-    //% blockId="christmastree_level" block="%level"
+    //% blockId="christmastree_levels" block="%level"
     //% advanced=true
-    export function level(_level: Level): number {
+    export function levels(_level: Level): number {
         return _level;
     }
 }
