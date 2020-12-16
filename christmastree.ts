@@ -180,12 +180,32 @@ namespace ChristmasTree {
         public update():void{
             if(this.mode==0){
                 this.rainbowAnimation();
+                this.showStrip();
+                basic.pause(100);
             }else if(this.mode==1){
-                this.equalizerAnimation(input.soundLevel());
+                let mic = 128
+                try{
+                    mic = input.soundLevel()
+                }catch{
+                    mic = 128
+                }
+                this.equalizerAnimation(mic);
+                this.showStrip();
+                basic.pause(1);
             }else if(this.mode==2){
                 this.breathAnimation();
+                this.showStrip();
             }else if(this.mode==3){
-                this.ringAnimation(input.soundLevel(), 100)
+                let mic = 128
+                try{
+                    mic = input.soundLevel()
+                }catch{
+                    mic = 128
+                }
+                this.ringAnimation(mic, 100)
+                this.showStrip();
+            }else{
+                this.showStrip();
             }
             this._colorOffset+=1;
             this._breathColorOffset+=1;
@@ -213,8 +233,6 @@ namespace ChristmasTree {
                 this.strip.showRainbow(1, 360)
             }
             this.strip.rotate(this.rainbowSpeed)
-            this.strip.show()
-            basic.pause(100);
         }
 
 
@@ -251,8 +269,6 @@ namespace ChristmasTree {
                     this.setLevelColor(idx, this.makeColor(_color, _saturation, _brightness))
                 }
             }
-            this.strip.show();
-            basic.pause(1);
         }
 
         /**
@@ -278,7 +294,7 @@ namespace ChristmasTree {
                 let color = this.makeColor((this._breathColorOffset / 7 + (60 / this.numOfLEDPerPillar * index)) % 360, 100, breathB * 0.45 + 5)
                 this.setLevelColor(index, color)
             }
-            this.strip.show()
+            
         }
 
         /**
@@ -308,7 +324,7 @@ namespace ChristmasTree {
                     this.setLevelColor(level, this.makeColor(30, 25, 10))
                 }
             }
-            this.strip.show()
+            
         }
 
         private makeColor(color:number, saturation:number, brightness:number):number{
@@ -386,6 +402,6 @@ namespace ChristmasTree {
     //% blockId="christmastree_pickColors" block="Select color $color"
     //% color.shadow="colorWheelHsvPicker"
     export function color(color: number): number {
-        return neopixel.hsl( color/255*360, 100, 50);
+        return neopixel.hsl( color/255*360 , 100, 50);
     }
 }
