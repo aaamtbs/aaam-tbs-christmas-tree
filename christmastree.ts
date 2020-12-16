@@ -15,29 +15,6 @@ enum LEDMode {
         Ring = 3
 }
 
-enum TreeColors {
-    //% block=red
-    Red = 0xFF0000,
-    //% block=orange
-    Orange = 0xFFA500,
-    //% block=yellow
-    Yellow = 0xFFFF00,
-    //% block=green
-    Green = 0x00FF00,
-    //% block=blue
-    Blue = 0x0000FF,
-    //% block=indigo
-    Indigo = 0x4b0082,
-    //% block=violet
-    Violet = 0x8a2be2,
-    //% block=purple
-    Purple = 0xFF00FF,
-    //% block=white
-    White = 0xFFFFFF,
-    //% block=black
-    Black = 0x000000
-}
-
 /**
 * Christmas Tree blocks
 */
@@ -219,6 +196,14 @@ namespace ChristmasTree {
             return neopixel.hsl(color, saturation, brightness)
         }
 
+        /**
+         * Set specfic level to different color 
+         * (0 = level-1, 1 = level-2, etc...)
+         */
+        //% blockId="christmastree_setLevelColor" block="%tree set level-%level led to %color=neopixel_colors"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public setLevelColor(level:number, color:number):void{
             this.strip.setPixelColor(level, color)
             this.strip.setPixelColor(39 - level, color)
@@ -336,13 +321,5 @@ namespace ChristmasTree {
         tree.ringAnimation(micVal, threshold);
     }
 
-    /**
-     * Set specfic level to different color (0 = level-1, 1 = level-2, etc...)
-     */
-    //% blockId="christmastree_setLevelColor" block="%tree set level-%level led to %color"
-    //% weight=90 blockGap=8
-    //% parts="christmastree"
-    export function setLevelColor(tree:ChristmasTree, level:number, color:number):void{
-        tree.setLevelColor(level, color)
-    }
+
 }
