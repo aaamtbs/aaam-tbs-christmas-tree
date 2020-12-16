@@ -2,11 +2,11 @@
     "name": "aaam-tbs-christmas-tree",
     "description": "",
     "dependencies": {
-        "core": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
-        "README.md"
+        "README.md",
+        "christmastree.ts"
     ],
     "testFiles": [
         "christmastree-test.ts"

@@ -1,39 +1,38 @@
-
+// 在這裡添加你的程式
 /**
- * 使用這個文件來定義自訂的函式和積木。
- * 進一步了解：https://makecode.microbit.org/blocks/custom
- */
+* Use this file to define custom functions and blocks.
+* Read more at https://makecode.microbit.org/blocks/custom
+*/
 
 enum MyEnum {
-    //% block="one"
-    One,
-    //% block="two"
-    Two
+        //% block="one"
+        One,
+        //% block="two"
+        Two
 }
 
 /**
- * 自訂的積木
- */
-//% weight=100 color=#0fbc11 icon="☃"
+* Christmas Tree blocks
+*/
+//% weight=100 color=#0fbc11 icon=""
 namespace ChristmasTree {
     /**
-     * TODO: 在此描述函式
-     * @param n 在此描述參數, eg: 5
-     * @param s 在此描述參數, eg: "Hello"
-     * @param e 在此描述參數
-     * @param e1 在此描述參數
-     */
+    * TODO: describe your function here
+    * @param n describe parameter here, eg: 5
+    * @param s describe parameter here, eg: "Hello"
+    * @param e describe parameter here
+    */
     //% block
-    export function foo(n: number, s: string, e: MyEnum, e1: MyEnum): void {
+    export function foo(n: number, s: string, e: MyEnum): void {
         // Add code here
     }
 
     /**
-     * TODO: 在此描述函式
-     * @param value 在此描述值, eg: 5
-     */
+    * TODO: describe your function here
+    * @param value describe value here, eg: 5
+    */
     //% block
     export function fib(value: number): number {
-        return value <= 1 ? value : fib(value -1) + fib(value - 2);
+    return value <= 1 ? value : fib(value - 1) + fib(value - 2);
     }
 }
