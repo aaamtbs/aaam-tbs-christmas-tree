@@ -257,7 +257,6 @@ namespace ChristmasTree {
             this.strip.clear()
             for (let idx = 0; idx <= this.numOfLEDPerPillar; idx++) {
                 let _color = idx * this._colorStep + this._colorOffset % 360
-                console.log(_color + ", " + idx + ", " + this._colorStep + ", " + this._colorOffset )
                 if (idx <= anchor) {
                     this.setLevelColor(idx, this.makeColor(_color, 100, 50))
                 } else {
