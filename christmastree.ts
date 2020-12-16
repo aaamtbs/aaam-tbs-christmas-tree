@@ -114,7 +114,7 @@ namespace ChristmasTree {
         }
 
         /**
-         * Set next animation mode
+         * Play next animation
          */
         //% blockId="christmastree_nextMode" block="%tree play next animation"
         //% tree.defl=tree
@@ -129,7 +129,7 @@ namespace ChristmasTree {
         }
 
         /**
-         * Update animation
+         * Play previous animation
          */
         //% blockId="christmastree_previousMode" block="%tree play previous animation"
         //% tree.defl=tree
@@ -194,7 +194,7 @@ namespace ChristmasTree {
         /**
          * Play equalizer animation
          */
-        //% blockId="christmastree_equalizerAnimation" block="%tree play equalizer animation with %value"
+        //% blockId="christmastree_equalizerAnimation" block="%tree play equalizer animation with sound level%value"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
@@ -257,7 +257,7 @@ namespace ChristmasTree {
         /**
          * Play ring animation
          */
-        //% blockId="christmastree_ringAnimation" block="%tree play ring animation with %micVale and %threshold"
+        //% blockId="christmastree_ringAnimation" block="%tree play ring animation with sound level%micVale and trigger threshold%threshold"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
@@ -325,14 +325,14 @@ namespace ChristmasTree {
      * Create a new Christmas Tree controller.
      * @param mode the default mode where the Christmas tree default setting.
      */
-    //% blockId="christmastree_create" block="ChristmasTree with leds as %mode"
+    //% blockId="christmastree_create" block="Create christmas tree"
     //% weight=90 blockGap=8
     //% parts="christmastree"
     //% trackArgs=0,1
-    //% blockSetVariable=strip
-    export function create(mode: LEDMode): ChristmasTree {
+    //% blockSetVariable=tree
+    export function create(): ChristmasTree {
         let tree = new ChristmasTree();
-        tree.mode = mode;
+        tree.mode = LEDMode.Rainbow;
         tree.numOfLEDPerPillar = 19;
         tree.totalNumLeds = 81;
         tree.strip = neopixel.create(DigitalPin.P2, tree.totalNumLeds, NeoPixelMode.RGB);
@@ -350,5 +350,15 @@ namespace ChristmasTree {
     //% advanced=true
     export function levels(_level: Level): number {
         return _level;
+    }
+
+    /**
+     * Gets the level value of a known levels
+    */
+    //% weight=2 blockGap=8
+    //% blockId="christmastree_pickColors" block="show wheel $color"
+    //% color.shadow="colorWheelHsvPicker"
+    export function color(color: number): number {
+        return color;
     }
 }

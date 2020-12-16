@@ -1,6 +1,6 @@
 // tests go here; this will not be compiled when this package is used as an extension.
 {
-    let tree = ChristmasTree.create(LEDMode.Rainbow);
+    let tree = ChristmasTree.create();
     
     input.onButtonPressed(Button.A, () => {
         tree.previousMode()
