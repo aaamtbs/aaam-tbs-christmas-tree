@@ -44,8 +44,6 @@ namespace ChristmasTree {
         private _ringColor:number[];
         
 
-        //_isSetupRainbow = false;
-
         public updateVars():void{
             this._colorStep = 360/this.numOfLEDPerPillar;
             this._colorOffset = 0;
@@ -56,26 +54,13 @@ namespace ChristmasTree {
 
             this._ringState = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
             this._ringColor = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-
         }
 
-        /**
-         * Control tree to play specfic mode
-         */
-        //% blockId="christmastree_changeMode" block="Play mode(%mode) animation"
-        //% weight=90 blockGap=8
-        //% parts="christmastree"
         public changeMode(m:LEDMode):void{
             this._isSetupRainbow = false;
             this.mode = m;
         }
 
-        /**
-         * Control tree to play next preset animation
-         */
-        //% blockId="christmastree_nextMode" block="%tree Play next animation"
-        //% weight=90 blockGap=8
-        //% parts="christmastree"
         public nextMode():void{
             this._isSetupRainbow = false;
             this.mode += 1;
@@ -83,12 +68,6 @@ namespace ChristmasTree {
                 this.mode = 0;
             }
         }
-        /**
-         * Control tree to play previous preset animation
-         */
-        //% blockId="christmastree_previousMode" block="%tree Play previous animation"
-        //% weight=90 blockGap=8
-        //% parts="christmastree"
         public previousMode():void{
             this._isSetupRainbow = false;
             this.mode -= 1;
@@ -119,12 +98,6 @@ namespace ChristmasTree {
             }
         }
 
-        /**
-         * Play Rainbow animation
-         */
-        //% blockId="christmastree_rainbowAnimation" block="Play Rainbow animation"
-        //% weight=90 blockGap=8
-        //% parts="christmastree"
         public rainbowAnimation():void{
             if(this._isSetupRainbow == false || this._isSetupRainbow == null){
                 this._isSetupRainbow = true;
@@ -136,12 +109,6 @@ namespace ChristmasTree {
             basic.pause(100);
         }
 
-        /**
-         * Play Equalize animation with Mic level
-         */
-        //% blockId="christmastree_equalizerAnimation" block="Play Equalize animation with Mic level (%micLevel)"
-        //% weight=90 blockGap=8
-        //% parts="christmastree"
         public equalizerAnimation(micVal:number):void{
             if(this._lastMicVal!=-1){
                 if(micVal < this._lastMicVal){
@@ -172,13 +139,6 @@ namespace ChristmasTree {
             basic.pause(1);
         }
 
-
-        /**
-         * Play breath animation
-         */
-        //% blockId="christmastree_breathAnimation" block="Play breath animation"
-        //% weight=90 blockGap=8
-        //% parts="christmastree"
         public breathAnimation () {
             if (this._breathT % 100 == 0) {
                 this._breathDir *= -1;
@@ -198,12 +158,6 @@ namespace ChristmasTree {
             this.strip.show()
         }
 
-        /**
-         * Play ring animation
-         */
-        //% blockId="christmastree_ringAnimation" block="Play ring animation"
-        //% weight=90 blockGap=8
-        //% parts="christmastree"
         public ringAnimation(micVal:Number, threshold:Number):void{
             let _duration = 3
             if (micVal > threshold) {
@@ -227,22 +181,10 @@ namespace ChristmasTree {
             this.strip.show()
         }
 
-        /**
-         * Create color number from hue, saturation, brightness
-         */
-        //% blockId="christmastree_ringAnimation" block="Create color with %hue %saturation %brightness"
-        //% weight=90 blockGap=8
-        //% parts="christmastree"
-        public makeColor(color:number, saturation:number, brightness:number):number{
+        private makeColor(color:number, saturation:number, brightness:number):number{
             return neopixel.hsl(color, saturation, brightness)
         }
 
-        /**
-         * Set led color for specfic level from 0 - 18 (0 = level-1, 1 = level-2, etc...)
-         */
-        //% blockId="christmastree_setLevelColor" block="%tree Set led color for level-%level"
-        //% weight=90 blockGap=8
-        //% parts="christmastree"
         public setLevelColor(level:number, color:number):void{
             this.strip.setPixelColor(level, color)
             this.strip.setPixelColor(39 - level, color)
@@ -258,13 +200,6 @@ namespace ChristmasTree {
             }
         }
 
-
-        /**
-         * Ease in out quad equation
-         */
-        //% blockId="christmastree_easeInOutQuad" block="easeInOutQuad(%percent, %elapsed, %start, %end)"
-        //% weight=90 blockGap=8
-        //% parts="christmastree"
         public easeInOutQuad (_percent: number, _elapsed: number, _start: number, _end: number) {
             _percent /= _end/2;
             
@@ -308,5 +243,73 @@ namespace ChristmasTree {
     }
 
 
+        /**
+         * Control tree to play next preset animation
+         */
+        //% blockId="christmastree_nextMode" block="%tree play next animation"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        export function nextMode(tree:ChristmasTree):void{
+            tree.nextMode();
+        }
+        /**
+         * Control tree to play previous preset animation
+         */
+        //% blockId="christmastree_previousMode" block="%tree play previous animation"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        export function previousMode(tree:ChristmasTree):void{
+            tree.previousMode();
+        }
     
+        /**
+         * Play Rainbow animation
+         */
+        //% blockId="christmastree_rainbowAnimation" block=" %tree play Rainbow animation"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        export function rainbowAnimation(tree:ChristmasTree):void{
+            tree.rainbowAnimation();
+        }
+
+        /**
+         * Play Equalize animation with Mic level
+         */
+        //% blockId="christmastree_equalizerAnimation" block="%tree play equalize animation with Mic level (%micLevel)"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        export function equalizerAnimation(tree:ChristmasTree, micVal:number):void{
+            tree.equalizerAnimation(micVal);
+        }
+
+
+        /**
+         * Play breath animation
+         */
+        //% blockId="christmastree_breathAnimation" block="%tree play breath animation"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        export function breathAnimation (tree:ChristmasTree):void {
+            tree.breathAnimation();
+        }
+
+        /**
+         * Play ring animation
+         */
+        //% blockId="christmastree_ringAnimation" block="%tree play ring animation with %micVale and %threshold"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        export function ringAnimation(tree:ChristmasTree, micVal:Number, threshold:Number):void{
+            tree.ringAnimation(micVal, threshold);
+        }
+
+        /**
+         * Set led color for specfic level from 0 - 18 (0 = level-1, 1 = level-2, etc...)
+         */
+        //% blockId="christmastree_setLevelColor" block="%tree Set led %color for level-%level"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        export function setLevelColor(tree:ChristmasTree, level:number, color:number):void{
+            tree.setLevelColor(level, color)
+        }
 }
