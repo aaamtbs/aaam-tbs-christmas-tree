@@ -87,7 +87,7 @@ namespace ChristmasTree {
          * @param endHue the end hue value for the rainbow, eg: 360
          */
         //% blockId="christmastree_changeMode" block="%tree|change mode to %mode"
-        //% tree.defl=tree
+        
         //% weight=85 blockGap=8
         //% parts="christmastree"
         public changeMode(m:LEDMode):void{
