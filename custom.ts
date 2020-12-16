@@ -14,16 +14,17 @@ enum MyEnum {
 /**
  * 自訂的積木
  */
-//% weight=100 color=#0fbc11 icon=""
-namespace custom {
+//% weight=100 color=#0fbc11 icon="☃"
+namespace ChristmasTree {
     /**
      * TODO: 在此描述函式
      * @param n 在此描述參數, eg: 5
      * @param s 在此描述參數, eg: "Hello"
      * @param e 在此描述參數
+     * @param e1 在此描述參數
      */
     //% block
-    export function foo(n: number, s: string, e: MyEnum): void {
+    export function foo(n: number, s: string, e: MyEnum, e1: MyEnum): void {
         // Add code here
     }
 
