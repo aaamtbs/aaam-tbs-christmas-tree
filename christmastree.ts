@@ -383,9 +383,9 @@ namespace ChristmasTree {
      * Gets the level value of a known levels
     */
     //% weight=2 blockGap=8
-    //% blockId="christmastree_pickColors" block="show wheel $color"
-    //% color.shadow="colorWheelPicker"
+    //% blockId="christmastree_pickColors" block="Select color $color"
+    //% color.shadow="colorWheelHsvPicker"
     export function color(color: number): number {
-        return color;
+        return neopixel.hsl( color, 100, 50);
     }
 }
