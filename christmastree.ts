@@ -87,7 +87,7 @@ namespace ChristmasTree {
          * @param endHue the end hue value for the rainbow, eg: 360
          */
         //% blockId="christmastree_changeMode" block="%tree|change mode to %mode"
-        
+        //% tree.defl=tree
         //% weight=85 blockGap=8
         //% parts="christmastree"
         public changeMode(m:LEDMode):void{
@@ -339,7 +339,7 @@ namespace ChristmasTree {
     /**
      * Set specfic level to different color (0 = level-1, 1 = level-2, etc...)
      */
-    //% blockId="christmastree_setLevelColor" block="%tree set level-%level led to %color=TreeColors"
+    //% blockId="christmastree_setLevelColor" block="%tree set level-%level led to %color"
     //% weight=90 blockGap=8
     //% parts="christmastree"
     export function setLevelColor(tree:ChristmasTree, level:number, color:number):void{
