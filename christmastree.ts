@@ -59,7 +59,7 @@ enum Level {
 /**
 * Christmas Tree blocks
 */
-//% weight=100 color=#0fab11 icon="❄"
+//% weight=100 color=#c49118 icon="❄"
 namespace ChristmasTree {
     /**
      * A ChristmasTree tree
