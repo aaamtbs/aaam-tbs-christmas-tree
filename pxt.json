@@ -13,7 +13,7 @@
         "custom.ts"
     ],
     "testFiles": [
-        "test.ts"
+        "christmastree-test.ts"
     ],
     "supportedTargets": [
         "microbit"
