@@ -59,11 +59,23 @@ namespace ChristmasTree {
 
         }
 
+        /**
+         * Control tree to play specfic mode
+         */
+        //% blockId="christmastree_changeMode" block="Play mode(%mode) animation"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public changeMode(m:LEDMode):void{
             this._isSetupRainbow = false;
             this.mode = m;
         }
 
+        /**
+         * Control tree to play next preset animation
+         */
+        //% blockId="christmastree_nextMode" block="%tree Play next animation"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public nextMode():void{
             this._isSetupRainbow = false;
             this.mode += 1;
@@ -71,7 +83,12 @@ namespace ChristmasTree {
                 this.mode = 0;
             }
         }
-
+        /**
+         * Control tree to play previous preset animation
+         */
+        //% blockId="christmastree_previousMode" block="%tree Play previous animation"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public previousMode():void{
             this._isSetupRainbow = false;
             this.mode -= 1;
@@ -80,6 +97,12 @@ namespace ChristmasTree {
             }
         }
 
+        /**
+         * Update christmas tree light animation
+         */
+        //% blockId="christmastree_update" block="Update christmas tree light animation"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public update():void{
             if(this.mode==0){
                 this.rainbowAnimation();
@@ -97,16 +120,17 @@ namespace ChristmasTree {
             if(this._colorOffset>360){
                 this._colorOffset = 0;
             }
-            /*
-            if(this._breathColorOffset>360){
-                this._breathColorOffset = 0;
-            }
-            */
             if(this._breathT>100){
                 this._breathT = 1;
             }
         }
 
+        /**
+         * Play Rainbow animation
+         */
+        //% blockId="christmastree_rainbowAnimation" block="Play Rainbow animation"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public rainbowAnimation():void{
             if(this._isSetupRainbow == false || this._isSetupRainbow == null){
                 this._isSetupRainbow = true;
@@ -118,6 +142,12 @@ namespace ChristmasTree {
             basic.pause(100);
         }
 
+        /**
+         * Play Equalize animation with Mic level
+         */
+        //% blockId="christmastree_equalizerAnimation" block="Play Equalize animation with Mic level (%micLevel)"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public equalizerAnimation(micVal:number):void{
             if(this._lastMicVal!=-1){
                 if(micVal < this._lastMicVal){
@@ -128,10 +158,8 @@ namespace ChristmasTree {
             }
             this._lastMicVal = micVal;
             let anchor:number = micVal / 100 * this.numOfLEDPerPillar
-            //if(anchor<5) anchor = 5;
-
+            
             this.strip.clear()
-           // console.log(this._colorStep);
             for (let idx = 0; idx <= this.numOfLEDPerPillar; idx++) {
                 let _color = idx * this._colorStep + this._colorOffset % 360
                 console.log(_color + ", " + idx + ", " + this._colorStep + ", " + this._colorOffset )
@@ -146,11 +174,17 @@ namespace ChristmasTree {
                     this.setLevelColor(idx, this.makeColor(_color, _saturation, _brightness))
                 }
             }
-            this.strip.show()
-            basic.pause(1)
-
+            this.strip.show();
+            basic.pause(1);
         }
 
+
+        /**
+         * Play breath animation
+         */
+        //% blockId="christmastree_breathAnimation" block="Play breath animation"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public breathAnimation () {
             if (this._breathT % 100 == 0) {
                 this._breathDir *= -1;
@@ -161,22 +195,25 @@ namespace ChristmasTree {
             } else {
                 breathB = 100 - this.easeInOutQuad(this._breathT % 100, 0, 100, 100)
             }
-            // serial.writeLine(breathB.toString())
-            // serial.writeLine(breathB.toString() +", " + breathDir.toString())
+
             this.strip.clear()
             for (let index = 0; index < this.numOfLEDPerPillar; index++) {
                 let color = this.makeColor((this._breathColorOffset / 7 + (60 / this.numOfLEDPerPillar * index)) % 360, 100, breathB * 0.45 + 5)
-                //color = neopixel.hsl((t / 7 + 60 / NumOfLEDs * index) % 360, 100, breathB * 0.45 + 5)
                 this.setLevelColor(index, color)
             }
             this.strip.show()
         }
 
+        /**
+         * Play ring animation
+         */
+        //% blockId="christmastree_ringAnimation" block="Play ring animation"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public ringAnimation(micVal:Number, threshold:Number):void{
-            let _aaamT = 3
+            let _duration = 3
             if (micVal > threshold) {
-                //this._ringState[0] = _aaamT
-                this._ringState[0] = this._ringState[1] = _aaamT
+                this._ringState[0] = this._ringState[1] = _duration
                 this._ringColor[0] = this._ringColor[1] = this.makeColor(Math.random() * 360, 100, 50)
             }
             this.strip.clear()
@@ -186,7 +223,7 @@ namespace ChristmasTree {
                     this.setLevelColor(level, this._ringColor[level])
                     this._ringState[level] -= 1;
                     if(this._ringState[level]==0 && level + 1 < this.numOfLEDPerPillar){
-                        this._ringState[level+1] = _aaamT + 1;
+                        this._ringState[level+1] = _duration + 1;
                         this._ringColor[level+1] = this._ringColor[level]
                     }
                 }else{
@@ -196,12 +233,23 @@ namespace ChristmasTree {
             this.strip.show()
         }
 
+        /**
+         * Create color number from hue, saturation, brightness
+         */
+        //% blockId="christmastree_ringAnimation" block="Create color with %hue %saturation %brightness"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public makeColor(color:number, saturation:number, brightness:number):number{
             return neopixel.hsl(color, saturation, brightness)
         }
 
+        /**
+         * Set led color for specfic level from 0 - 18 (0 = level-1, 1 = level-2, etc...)
+         */
+        //% blockId="christmastree_setLevelColor" block="%tree Set led color for level-%level"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
         public setLevelColor(level:number, color:number):void{
-            //console.log(level +", "+ color +", "+ saturation +", "+ brightness)
             this.strip.setPixelColor(level, color)
             this.strip.setPixelColor(39 - level, color)
             this.strip.setPixelColor(level + 41, color)
@@ -216,18 +264,23 @@ namespace ChristmasTree {
             }
         }
 
-        public easeInOutQuad (_t: number, _b: number, _c: number, _d: number) {
-            _t /= _d/2;
-        control.inBackground(function () {
-                
-            })
-        if (_t < 1) {
-                return _c / 2 * _t * _t + _b
+
+        /**
+         * Ease in out quad equation
+         */
+        //% blockId="christmastree_easeInOutQuad" block="easeInOutQuad(%percent, %elapsed, %start, %end)"
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        public easeInOutQuad (_percent: number, _elapsed: number, _start: number, _end: number) {
+            _percent /= _end/2;
+            
+            if (_percent < 1) {
+                return _start / 2 * _percent * _percent + _elapsed
             }
-            _t += -1
-            return (0 - _c) / 2 * (_t * (_t - 2) - 1) + _b
+            _percent += -1
+            return (0 - _start) / 2 * (_percent * (_percent - 2) - 1) + _elapsed
         }
-    }
+    }   
    /**
      * Create a new Christmas Tree controller.
      * @param mode the default mode where the Christmas tree default setting.
@@ -247,39 +300,5 @@ namespace ChristmasTree {
 
         tree.updateVars();
         return tree;
-    }
-
-    export function changeMode(m: LEDMode): void {
-        // Add code here
-    }
-
-    /**
-    * TODO: describe your function here
-    * @param n describe parameter here, eg: 5
-    * @param s describe parameter here, eg: "Hello"
-    * @param e describe parameter here
-    */
-    //% block
-    export function foo(n: number, s: string, e: LEDMode): void {
-        // Add code here
-    }
-    /**
-    * TODO: describe your function here
-    * @param n describe parameter here, eg: 5
-    * @param s describe parameter here, eg: "Hello"
-    * @param e1 describe parameter here
-    */
-    //% block
-    export function foo2(n: number, s: string, e1: LEDMode): void {
-        // Add code here
-    }
-
-    /**
-    * TODO: describe your function here
-    * @param value describe value here, eg: 5
-    */
-    //% block
-    export function fib(value: number): number {
-    return value <= 1 ? value : fib(value - 1) + fib(value - 2);
     }
 }
