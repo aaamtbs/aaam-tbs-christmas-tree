@@ -2,7 +2,8 @@
     "name": "aaam-tbs-christmas-tree",
     "description": "",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "neopixel": "github:microsoft/pxt-neopixel#v0.7.3"
     },
     "files": [
         "README.md",
