@@ -11,8 +11,8 @@ enum LEDMode {
         Equalizer = 1,
         //% block="Breath Mode"
         Breath = 2,
-        //% block="Ring Mode"
-        Ring = 3,
+        //% block="Rise Mode"
+        Rise = 3,
         //% block="Free Mode"
         Free = 4
 }
@@ -86,8 +86,8 @@ namespace ChristmasTree {
         private _breathDir:number;
         private _breathColorOffset:number;
 
-        private _ringState:number[];
-        private _ringColor:number[];
+        private _riseState:number[];
+        private _riseColor:number[];
         
 
         public updateVars():void{
@@ -98,8 +98,8 @@ namespace ChristmasTree {
             this._breathDir = 1;
             this._breathColorOffset = 0;
 
-            this._ringState = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-            this._ringColor = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+            this._riseState = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+            this._riseColor = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         }
 
 
@@ -202,7 +202,7 @@ namespace ChristmasTree {
                 }catch{
                     mic = 128
                 }
-                this.ringAnimation(mic, 100)
+                this.riseAnimation(mic, 100)
                 this.showStrip();
             }else{
                 this.showStrip();
@@ -297,27 +297,27 @@ namespace ChristmasTree {
         }
 
         /**
-         * Play ring animation
+         * Play rise animation
          */
-        //% blockId="christmastree_ringAnimation" block="%tree play ring animation with sound level%micVale and trigger threshold%threshold"
+        //% blockId="christmastree_riseAnimation" block="%tree play rise animation with sound level%micVale and trigger threshold%threshold"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
-        public ringAnimation(micVal:Number, threshold:Number):void{
+        public riseAnimation(micVal:Number, threshold:Number):void{
             let _duration = 3
             if (micVal > threshold) {
-                this._ringState[0] = this._ringState[1] = _duration
-                this._ringColor[0] = this._ringColor[1] = this.makeColor(Math.random() * 360, 100, 50)
+                this._riseState[0] = this._riseState[1] = _duration
+                this._riseColor[0] = this._riseColor[1] = this.makeColor(Math.random() * 360, 100, 50)
             }
             this.strip.clear()
 
             for (let level = 0; level < this.numOfLEDPerPillar; level++) {
-                if(this._ringState[level] > 0){
-                    this.setLevelColor(level, this._ringColor[level])
-                    this._ringState[level] -= 1;
-                    if(this._ringState[level]==0 && level + 1 < this.numOfLEDPerPillar){
-                        this._ringState[level+1] = _duration + 1;
-                        this._ringColor[level+1] = this._ringColor[level]
+                if(this._riseState[level] > 0){
+                    this.setLevelColor(level, this._riseColor[level])
+                    this._riseState[level] -= 1;
+                    if(this._riseState[level]==0 && level + 1 < this.numOfLEDPerPillar){
+                        this._riseState[level+1] = _duration + 1;
+                        this._riseColor[level+1] = this._riseColor[level]
                     }
                 }else{
                     this.setLevelColor(level, this.makeColor(30, 25, 10))
