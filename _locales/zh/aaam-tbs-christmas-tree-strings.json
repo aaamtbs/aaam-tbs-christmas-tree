@@ -41,5 +41,8 @@
     "ChristmasTree.ChristmasTree.riseAnimation|block": "%tree|播放星際光束模式,當音量%micVale|大過門檻%threshold|會觸發結果",
     "ChristmasTree.ChristmasTree.triggerRiseWithColor|block": "%tree|觸發星際光束效果, 效果持續時間%duration|和顏色%color",
     "ChristmasTree.ChristmasTree.triggerRise|block": "%tree|觸發星際光束效果, 效果持續時間|%duration",
-    "ChristmasTree.ChristmasTree.moveRise|block": "%tree|更新星際光束效果"
+    "ChristmasTree.ChristmasTree.moveRise|block": "%tree|更新星際光束效果",
+    "ChristmasTree.ChristmasTree.setTreeColor|block": "%tree|設定聖誕樹顏色%color=neopixel_colors",
+    "ChristmasTree.ChristmasTree.setTreeColorAndBrightness|block": "%tree|設定聖誕樹顏色%color=christmastree_pickColorHue|和亮度%brightness",
+    "ChristmasTree.ChristmasTree.setLevelColorAndBrightness|block": "%tree|設定第%level=christmastree_levels|層燈光顏色%color=christmastree_pickColorHue|和亮度%brightness"
 }
