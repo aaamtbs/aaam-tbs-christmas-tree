@@ -365,6 +365,18 @@ namespace ChristmasTree {
             }
         }
 
+        /**
+         * Set pixel color 
+         * (0 = index-1, 1 = index-2, etc...)
+         */
+        //% blockId="christmastree_setPixelColor" block="%tree set pixel-%index led to %color=neopixel_colors"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        public setPixelColor(index:number, color:number):void{
+            this.strip.setPixelColor(index, color)
+        }
+
         public easeInOutQuad (_percent: number, _elapsed: number, _start: number, _end: number) {
             _percent /= _end/2;
             
