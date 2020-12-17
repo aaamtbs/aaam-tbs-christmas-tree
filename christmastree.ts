@@ -415,7 +415,7 @@ namespace ChristmasTree {
         //% parts="christmastree"
         public setTreeColor(color:number):void{
             for (let idx = 0; idx <= 19; idx++) {
-                this.strip.setPixelColor(idx, color)
+                this.setLevelColor(idx, color)
             }
         }
 
