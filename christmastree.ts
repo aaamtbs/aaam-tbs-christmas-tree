@@ -351,7 +351,7 @@ namespace ChristmasTree {
         /**
          * Trigger rise led effect
          */
-        //% blockId="christmastree_riseAnimation" block="%tree trigger rise led effect with %duration|duration"
+        //% blockId="christmastree_triggerRise" block="%tree trigger rise led effect with %duration|duration"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
@@ -365,7 +365,7 @@ namespace ChristmasTree {
         /**
          * Move rise led move upward
          */
-        //% blockId="christmastree_moveRise" block="%tree play rise led move upward"
+        //% blockId="christmastree_moveRise" block="%tree move rise led upward"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
