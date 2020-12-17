@@ -166,7 +166,7 @@ namespace ChristmasTree {
         /**
          * Play next animation
          */
-        //% blockId="christmastree_nextMode" block="%tree play next animation"
+        //% blockId="christmastree_nextMode" block="%tree play next mode"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
@@ -181,7 +181,7 @@ namespace ChristmasTree {
         /**
          * Play previous animation
          */
-        //% blockId="christmastree_previousMode" block="%tree play previous animation"
+        //% blockId="christmastree_previousMode" block="%tree play previous mode"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
@@ -196,7 +196,7 @@ namespace ChristmasTree {
         /**
          * Update animation
          */
-        //% blockId="christmastree_update" block="%tree update animation"
+        //% blockId="christmastree_update" block="%tree update lighting animation"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
