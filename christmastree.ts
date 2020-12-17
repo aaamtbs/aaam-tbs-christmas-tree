@@ -423,7 +423,7 @@ namespace ChristmasTree {
          * Set christmas tree brightness
          * value larger than 50 color will change to white
          */
-        //% blockId="christmastree_setTreeBrightness" block="%tree set christmas tree led brightness to %color=neopixel_colors"
+        //% blockId="christmastree_setTreeBrightness" block="%tree set christmas tree led brightness to %brightness"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
