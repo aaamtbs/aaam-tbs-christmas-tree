@@ -27,5 +27,9 @@
     "ChristmasTree.create|block": "創造聖誕樹",
     "ChristmasTree.levels|block": "%level",
     "ChristmasTree.color|block": "顏色$color",
-    "ChristmasTree.hue|block": "色相$color"
+    "ChristmasTree.hue|block": "色相$color",
+
+    "ChristmasTree.ChristmasTree.clearStrip|block": "%tree|清除LED燈帶顏色",
+    "ChristmasTree.ChristmasTree.showStrip|block": "%tree|顯示LED燈帶顏色",
+    "ChristmasTree.ChristmasTree.changeMode|block": "%tree|改變燈效模式為%mode"
 }
