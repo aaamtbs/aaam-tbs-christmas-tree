@@ -423,7 +423,7 @@ namespace ChristmasTree {
          * Set christmas tree brightness
          * value larger than 50 color will change to white
          */
-        //% blockId="christmastree_setTreeColorAndBrightness" block="%tree set christmas tree color to %color=christmastree_pickHueColors and led brightness to %brightness"
+        //% blockId="christmastree_setTreeColorAndBrightness" block="%tree set christmas tree color to %color=christmastree_pickColorHue and led brightness to %brightness"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
@@ -511,7 +511,7 @@ namespace ChristmasTree {
     }
 
     /**
-     * Gets the level value of a known levels
+     * Gets color
     */
     //% weight=2 blockGap=8
     //% blockId="christmastree_pickColors" block="Select color $color"
@@ -521,10 +521,10 @@ namespace ChristmasTree {
     }
 
     /**
-     * Gets the level value of a known levels
+     * Gets color hue
     */
     //% weight=2 blockGap=8
-    //% blockId="christmastree_pickHueColors" block="Select color hue|$hue"
+    //% blockId="christmastree_pickColorHue" block="Select color hue$hue"
     //% color.shadow="colorWheelHsvPicker"
     export function hueColor(color: number): number {
         return color;
