@@ -1,6 +1,12 @@
 {
-  "ChristmasTree.create|block": "創造聖誕樹",
-  "ChristmasTree.levels|block": "第%level|層",
-  "ChristmasTree.color|block": "顏色$color",
-  "ChristmasTree.hue|block": "色相$color"
+    "ChristmasTree.LEDMode.Rainbow|block": "電光彩虹模式",
+    "ChristmasTree.LEDMode.Equalizer|block": "動態聲光模式",
+    "ChristmasTree.LEDMode.Breath|block": "柔和氣息模式",
+    "ChristmasTree.LEDMode.Rise|block": "星際光束模式",
+    "ChristmasTree.LEDMode.Free|block": "創意自選模式",
+    
+    "ChristmasTree.create|block": "創造聖誕樹",
+    "ChristmasTree.levels|block": "第%level|層",
+    "ChristmasTree.color|block": "顏色$color",
+    "ChristmasTree.hue|block": "色相$color"
 }
