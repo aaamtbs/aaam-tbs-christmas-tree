@@ -220,6 +220,17 @@ namespace ChristmasTree {
         }
 
         /**
+         * Set leds strip to rainbow pattern.
+         */
+        //% blockId="christmastree_showRainbow" block="%tree|set to rainbow pattern"
+        //% tree.defl=tree
+        //% weight=85 blockGap=8
+        //% parts="christmastree"
+        public showRainbow():void{
+            this.strip.showRainbow();
+        }
+
+        /**
          * Play rainbow animation
          */
         //% blockId="christmastree_rainbowAnimation" block="%tree play rainbow animation width speed%speed"
