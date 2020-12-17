@@ -407,6 +407,31 @@ namespace ChristmasTree {
         }
 
         /**
+         * Set christmas tree color
+         */
+        //% blockId="christmastree_setTreeColor" block="%tree set christmas tree led color to %color=neopixel_colors"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        public setTreeColor(color:number):void{
+            for (let idx = 0; idx <= 19; idx++) {
+                this.strip.setPixelColor(idx, color)
+            }
+        }
+
+        /**
+         * Set christmas tree brightness
+         * value larger than 50 color will change to white
+         */
+        //% blockId="christmastree_setTreeBrightness" block="%tree set christmas tree led brightness to %color=neopixel_colors"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        public setTreeBrightness(brightness:number):void{
+            this.strip.setBrightness(brightness)
+        }
+
+        /**
          * Set specfic level to different color 
          * (0 = level-1, 1 = level-2, etc...)
          */
