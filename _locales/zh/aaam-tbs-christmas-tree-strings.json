@@ -44,5 +44,6 @@
     "ChristmasTree.ChristmasTree.moveRise|block": "%tree|更新星際光束效果",
     "ChristmasTree.ChristmasTree.setTreeColor|block": "%tree|設定聖誕樹顏色%color=neopixel_colors",
     "ChristmasTree.ChristmasTree.setTreeColorAndBrightness|block": "%tree|設定聖誕樹顏色%color=christmastree_pickColorHue|和亮度%brightness",
-    "ChristmasTree.ChristmasTree.setLevelColorAndBrightness|block": "%tree|設定第%level=christmastree_levels|層燈光顏色%color=christmastree_pickColorHue|和亮度%brightness"
+    "ChristmasTree.ChristmasTree.setLevelColorAndBrightness|block": "%tree|設定第%level=christmastree_levels|層燈光顏色%color=christmastree_pickColorHue|和亮度%brightness",
+    "ChristmasTree.ChristmasTree.setLevelColor|block": "%tree|設定第%level=christmastree_levels|層燈光顏色%color=neopixel_colors"
 }
