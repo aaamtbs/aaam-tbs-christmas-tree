@@ -440,7 +440,7 @@ namespace ChristmasTree {
          * Set specfic level to different color and brightness
          * (0 = level-1, 1 = level-2, etc...)
          */
-        //% blockId="christmastree_setLevelColorAndBrightness" block="%tree set christmas tree color to %color=christmastree_pickColorHue and led brightness to %brightness"
+        //% blockId="christmastree_setLevelColorAndBrightness" block="%tree set level-%level=christmastree_levels color to %color=christmastree_pickColorHue and led brightness to %brightness"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
