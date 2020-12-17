@@ -9,7 +9,8 @@
     },
     "files": [
         "README.md",
-        "christmastree.ts"
+        "christmastree.ts",
+        "_locales/zh/aaam-tbs-christmas-tree-strings.json"
     ],
     "testFiles": [
         "christmastree-test.ts"
