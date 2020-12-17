@@ -86,6 +86,7 @@ namespace ChristmasTree {
         private _breathDir:number;
         private _breathColorOffset:number;
 
+        private _riseDuration:number;
         private _riseState:number[];
         private _riseColor:number[];
         
@@ -100,6 +101,8 @@ namespace ChristmasTree {
 
             this._riseState = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
             this._riseColor = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+            this._riseDuration = 3;
+
         }
 
 
@@ -338,9 +341,36 @@ namespace ChristmasTree {
         public riseAnimation(micVal:Number, threshold:Number):void{
             let _duration = 3
             if (micVal > threshold) {
-                this._riseState[0] = this._riseState[1] = _duration
-                this._riseColor[0] = this._riseColor[1] = this.makeColor(Math.random() * 360, 100, 50)
+                this.triggerRise(_duration)
             }
+            this.moveRise()
+        }
+
+        
+
+        /**
+         * Trigger rise led effect
+         */
+        //% blockId="christmastree_riseAnimation" block="%tree trigger rise led effect with %duration|duration"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        public triggerRise(duration:number):void{
+            this._riseDuration = duration
+            let _duration = this._riseDuration
+            this._riseState[0] = this._riseState[1] = _duration
+            this._riseColor[0] = this._riseColor[1] = this.makeColor(Math.random() * 360, 100, 50)
+        }
+        
+        /**
+         * Move rise led move upward
+         */
+        //% blockId="christmastree_moveRise" block="%tree play rise led move upward"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        public moveRise():void{
+            let _duration = this._riseDuration
             this.strip.clear()
 
             for (let level = 0; level < this.numOfLEDPerPillar; level++) {
@@ -355,7 +385,6 @@ namespace ChristmasTree {
                     this.setLevelColor(level, this.makeColor(30, 25, 10))
                 }
             }
-            
         }
 
         private makeColor(color:number, saturation:number, brightness:number):number{
