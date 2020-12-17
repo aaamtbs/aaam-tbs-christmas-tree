@@ -179,7 +179,7 @@ namespace ChristmasTree {
         //% parts="christmastree"
         public update():void{
             if(this.mode==0){
-                this.rainbowAnimation();
+                this.rainbowAnimation(this.rainbowSpeed);
                 this.showStrip();
                 basic.pause(100);
             }else if(this.mode==1){
@@ -222,11 +222,12 @@ namespace ChristmasTree {
         /**
          * Play rainbow animation
          */
-        //% blockId="christmastree_rainbowAnimation" block="%tree play rainbow animation"
+        //% blockId="christmastree_rainbowAnimation" block="%tree play rainbow animation width speed%speed"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
-        public rainbowAnimation():void{
+        public rainbowAnimation(speed:number):void{
+            this.rainbowSpeed = speed;
             if(this._isSetupRainbow == false || this._isSetupRainbow == null){
                 this._isSetupRainbow = true;
                 this.strip.clear()
