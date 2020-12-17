@@ -46,5 +46,5 @@
     "ChristmasTree.ChristmasTree.setTreeColorAndBrightness|block": "%tree|設定聖誕樹顏色%color=christmastree_pickColorHue|和亮度%brightness",
     "ChristmasTree.ChristmasTree.setLevelColorAndBrightness|block": "%tree|設定第%level=christmastree_levels|層燈光顏色%color=christmastree_pickColorHue|和亮度%brightness",
     "ChristmasTree.ChristmasTree.setLevelColor|block": "%tree|設定第%level=christmastree_levels|層燈光顏色%color=neopixel_colors",
-    "ChristmasTree.ChristmasTree.setPixelColor|block": "%tree|設定第%index|個像數的燈光顏色為%color=neopixel_color"
+    "ChristmasTree.ChristmasTree.setPixelColor|block": "%tree|設定第%index|個像數的燈光顏色為%color=neopixel_colors"
 }
