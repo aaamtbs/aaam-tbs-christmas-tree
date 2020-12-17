@@ -423,12 +423,15 @@ namespace ChristmasTree {
          * Set christmas tree brightness
          * value larger than 50 color will change to white
          */
-        //% blockId="christmastree_setTreeBrightness" block="%tree set christmas tree led brightness to %brightness"
+        //% blockId="christmastree_setTreeColorAndBrightness" block="%tree set christmas tree color to %color=christmastree_pickHueColors and led brightness to %brightness"
         //% tree.defl=tree
         //% weight=90 blockGap=8
         //% parts="christmastree"
-        public setTreeBrightness(brightness:number):void{
+        public setTreeColorAndBrightness(color:number, brightness:number):void{
             this.strip.setBrightness(brightness)
+            for (let idx = 0; idx <= 19; idx++) {
+                this.setLevelColor(idx, neopixel.hsl(color, 100, brightness))
+            }
         }
 
         /**
@@ -515,5 +518,15 @@ namespace ChristmasTree {
     //% color.shadow="colorWheelHsvPicker"
     export function color(color: number): number {
         return neopixel.hsl( color/255*360 , 100, 50);
+    }
+
+    /**
+     * Gets the level value of a known levels
+    */
+    //% weight=2 blockGap=8
+    //% blockId="christmastree_pickHueColors" block="Select color hue|$hue"
+    //% color.shadow="colorWheelHsvPicker"
+    export function hueColor(color: number): number {
+        return color;
     }
 }
