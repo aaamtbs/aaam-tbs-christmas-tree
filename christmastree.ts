@@ -511,16 +511,6 @@ namespace ChristmasTree {
     }
 
     /**
-     * Gets color
-    */
-    //% weight=2 blockGap=8
-    //% blockId="christmastree_pickColors" block="Select color $color"
-    //% color.shadow="colorWheelHsvPicker"
-    export function color(color: number): number {
-        return neopixel.hsl( color/255*360 , 100, 50);
-    }
-
-    /**
      * Gets color hue
     */
     //% weight=2 blockGap=8
@@ -528,5 +518,15 @@ namespace ChristmasTree {
     //% color.shadow="colorWheelHsvPicker"
     export function hueColor(color: number): number {
         return color;
+    }
+
+    /**
+     * Gets color
+    */
+    //% weight=2 blockGap=8
+    //% blockId="christmastree_pickColors" block="Select color $color"
+    //% color.shadow="colorWheelHsvPicker"
+    export function color(color: number): number {
+        return neopixel.hsl( color/255*360 , 100, 50);
     }
 }
