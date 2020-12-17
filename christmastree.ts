@@ -527,6 +527,6 @@ namespace ChristmasTree {
     //% blockId="christmastree_pickColorHue" block="Hue $color"
     //% color.shadow="colorWheelHsvPicker"
     export function hue(color: number): number {
-        return color/255 * 360;
+        return (color%255)/255 * 360;
     }
 }
