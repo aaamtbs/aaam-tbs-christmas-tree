@@ -351,6 +351,21 @@ namespace ChristmasTree {
         /**
          * Trigger rise led effect
          */
+        //% blockId="christmastree_triggerRiseWithColor" block="%tree trigger rise led effect with %duration|duration and %color|color"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        public triggerRiseWithColor(duration:number, color:number):void{
+            this._riseDuration = duration
+            let _duration = this._riseDuration
+            this._riseState[0] = this._riseState[1] = _duration
+            this._riseColor[0] = this._riseColor[1] = this.makeColor(color, 100, 50)
+        }
+        
+
+        /**
+         * Trigger rise led effect
+         */
         //% blockId="christmastree_triggerRise" block="%tree trigger rise led effect with %duration|duration"
         //% tree.defl=tree
         //% weight=90 blockGap=8
