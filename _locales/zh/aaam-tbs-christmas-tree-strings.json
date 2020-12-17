@@ -23,12 +23,10 @@
     "Level.Level_17|block": "第十七層",
     "Level.Level_18|block": "第十八層",
     "Level.Level_19|block": "第十九層",
-    
     "ChristmasTree.create|block": "創造聖誕樹",
     "ChristmasTree.levels|block": "%level",
     "ChristmasTree.color|block": "顏色$color",
     "ChristmasTree.hue|block": "色相$color",
-
     "ChristmasTree.ChristmasTree.clearStrip|block": "%tree|清除LED燈帶顏色",
     "ChristmasTree.ChristmasTree.showStrip|block": "%tree|顯示LED燈帶顏色",
     "ChristmasTree.ChristmasTree.changeMode|block": "%tree|改變燈效模式為%mode",
@@ -36,17 +34,4 @@
     "ChristmasTree.ChristmasTree.nextMode|block": "%tree|下一個燈效模式",
     "ChristmasTree.ChristmasTree.previousMode|block": "%tree|上一個燈效模式",
     "ChristmasTree.ChristmasTree.update|block": "%tree|更新燈效",
-    "ChristmasTree.ChristmasTree.showRainbow|block": "%tree|顯示彩虹顏色",
-    "ChristmasTree.ChristmasTree.rainbowAnimation|block": "%tree|用速度%speed|播放電光彩虹模式",
-    "ChristmasTree.ChristmasTree.equalizerAnimation|block": "%tree|用音量%value|播放動態聲光模式",
-    "ChristmasTree.ChristmasTree.breathAnimation|block": "%tree|播放柔和氣息模式",
-    "ChristmasTree.ChristmasTree.riseAnimation|block": "%tree|播放星際光束模式,當音量%micVale|大過門檻%threshold|會觸發結果",
-    "ChristmasTree.ChristmasTree.triggerRiseWithColor|block": "%tree|觸發星際光束效果, 效果持續時間%duration|和顏色%color",
-    "ChristmasTree.ChristmasTree.triggerRise|block": "%tree|觸發星際光束效果, 效果持續時間|%duration",
-    "ChristmasTree.ChristmasTree.moveRise|block": "%tree|更新星際光束效果",
-    "ChristmasTree.ChristmasTree.setTreeColor|block": "%tree|設定聖誕樹顏色%color=neopixel_colors",
-    "ChristmasTree.ChristmasTree.setTreeColorAndBrightness|block": "%tree|設定聖誕樹顏色%color=christmastree_pickColorHue|和亮度%brightness",
-    "ChristmasTree.ChristmasTree.setLevelColorAndBrightness|block": "%tree|設定第%level=christmastree_levels|層燈光顏色%color=christmastree_pickColorHue|和亮度%brightness",
-    "ChristmasTree.ChristmasTree.setLevelColor|block": "%tree|設定第%level=christmastree_levels|層燈光顏色%color=neopixel_colors",
-    "ChristmasTree.ChristmasTree.setPixelColor|block": "%tree|設定第%index|個像數的燈光顏色為%color=neopixel_color"
 }
