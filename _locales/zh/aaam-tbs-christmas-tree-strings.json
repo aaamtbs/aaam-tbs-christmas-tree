@@ -33,5 +33,5 @@
     "ChristmasTree.ChristmasTree.rotatePixelColor|block": "%tree|移動燈帶顏色%step|個像數",
     "ChristmasTree.ChristmasTree.nextMode|block": "%tree|下一個燈效模式",
     "ChristmasTree.ChristmasTree.previousMode|block": "%tree|上一個燈效模式",
-    "ChristmasTree.ChristmasTree.update|block": "%tree|更新燈效",
+    "ChristmasTree.ChristmasTree.update|block": "%tree|更新燈效"
 }
