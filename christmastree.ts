@@ -510,23 +510,14 @@ namespace ChristmasTree {
         return _level;
     }
 
+
     /**
      * Gets color hue
     */
     //% weight=2 blockGap=8
     //% blockId="christmastree_pickColorHue" block="Select hue $hue"
     //% color.shadow="colorWheelHsvPicker"
-    export function colorHue(colorHue: number): number {
-        return colorHue;
-    }
-
-    /**
-     * Gets color2
-    */
-    //% weight=2 blockGap=8
-    //% blockId="christmastree_pickColors2" block="Select color2 $color2"
-    //% color.shadow="colorWheelHsvPicker"
-    export function color2(color2: number): number {
-        return neopixel.hsl( color2/255*360 , 100, 50);
+    export function hue(hue: number): number {
+        return hue;
     }
 }
