@@ -428,10 +428,24 @@ namespace ChristmasTree {
         //% weight=90 blockGap=8
         //% parts="christmastree"
         public setTreeColorAndBrightness(color:number, brightness:number):void{
-            this.strip.setBrightness(brightness)
             for (let idx = 0; idx <= 19; idx++) {
                 this.setLevelColor(idx, neopixel.hsl(color, 100, brightness))
             }
+        }
+
+        
+
+        /**
+         * Set christmas tree brightness
+         * Set specfic level to different color and brightness
+         * (0 = level-1, 1 = level-2, etc...)
+         */
+        //% blockId="christmastree_setLevelColorAndBrightness" block="%tree set christmas tree color to %color=christmastree_pickColorHue and led brightness to %brightness"
+        //% tree.defl=tree
+        //% weight=90 blockGap=8
+        //% parts="christmastree"
+        public setLevelColorAndBrightness(level:number, color:number, brightness:number):void{
+            this.setLevelColor(level, neopixel.hsl(color, 100, brightness))
         }
 
         /**
