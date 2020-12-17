@@ -151,11 +151,11 @@ namespace ChristmasTree {
         //% parts="christmastree"
         public rotatePixelColor(speed:number):void{
             this.rainbowSpeed = speed;
-            if(this.rainbowSpeed > 8 ){
-                this.rainbowSpeed = 8;
+            if(this.rainbowSpeed > 5 ){
+                this.rainbowSpeed = 5;
             }
-            if(this.rainbowSpeed < -8 ){
-                this.rainbowSpeed = -8;
+            if(this.rainbowSpeed < -5 ){
+                this.rainbowSpeed = -5;
             }
             this.strip.rotate(this.rainbowSpeed);
         }
