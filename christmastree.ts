@@ -141,6 +141,20 @@ namespace ChristmasTree {
         }
 
         /**
+         * Shows a rainbow pattern on all LEDs.
+         * @param startHue the start hue value for the rainbow, eg: 1
+         * @param endHue the end hue value for the rainbow, eg: 360
+         */
+        //% blockId="christmastree_rotatePixelColor" block="%tree|move pixel by %mode|pixel"
+        //% tree.defl=tree
+        //% weight=85 blockGap=8
+        //% parts="christmastree"
+        public rotatePixelColor(speed:number):void{
+            this.rainbowSpeed = speed;
+            this.strip.rotate(this.rainbowSpeed);
+        }
+
+        /**
          * Play next animation
          */
         //% blockId="christmastree_nextMode" block="%tree play next animation"
