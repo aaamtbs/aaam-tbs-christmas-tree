@@ -516,8 +516,8 @@ namespace ChristmasTree {
     //% weight=2 blockGap=8
     //% blockId="christmastree_pickColorHue" block="Select hue $hue"
     //% color.shadow="colorWheelHsvPicker"
-    export function hueColor(hue: number): number {
-        return hue;
+    export function colorHue(colorHue: number): number {
+        return colorHue;
     }
 
     /**
