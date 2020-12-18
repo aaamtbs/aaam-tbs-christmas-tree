@@ -1,7 +1,7 @@
 {
-    "name": "aaam-tbs-christmas-tree",
+    "name": "Christmas tree",
     "version": "0.4.1",
-    "description": "",
+    "description": "Aaam x TBS Christmas Tree",
     "dependencies": {
         "core": "*",
         "microphone": "*",
