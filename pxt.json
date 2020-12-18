@@ -1,5 +1,5 @@
 {
-    "name": "Christmas tree",
+    "name": "christmas-tree",
     "version": "0.4.3",
     "description": "Aaam x TBS Christmas Tree",
     "dependencies": {
@@ -18,5 +18,6 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "tsprj"
+    "preferredEditor": "tsprj",
+    "icon": "logo.png"
 }
