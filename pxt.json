@@ -1,6 +1,6 @@
 {
     "name": "aaam-tbs-christmas-tree",
-    "version": "0.4.4",
+    "version": "0.4.5",
     "description": "Aaam x TBS Christmas Tree",
     "dependencies": {
         "core": "*",
